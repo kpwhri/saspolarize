@@ -18,6 +18,8 @@ If you're moving from SAS to Python, a full rewrite is rarely the best first ste
 
 ## Installation
 
+You can install with `pip install saspolarize` to get the latest published version.
+
 Install the package and its dependencies with your preferred tool.
 
 Example with `uv`:
@@ -56,7 +58,7 @@ Or pass the executable path directly in code.
 ```python
 from saspolarize import run_sas_code
 
-result = run_sas_code("""
+result = run_sas_code('''
 data test;
     x = 1;
     y = 'Hello from SAS';
@@ -65,12 +67,12 @@ run;
 
 proc print data=test;
 run;
-""")
+''')
 
-print(result["success"])
-print(result["return_code"])
-print(result["log"])
-print(result["output"])
+print(result['success'])
+print(result['return_code'])
+print(result['log'])
+print(result['output'])
 ```
 ## Pass a polars DataFrame into SAS
 
@@ -208,3 +210,12 @@ N.b.: tests that require SAS are skipped automatically if the configured SAS exe
 
 ## License
 
+MIT License.
+
+## Issues
+
+If you encounter issues, please submit a bug report describing:
+
+* The problem encountered,
+* Minimal code to reproduce the bug,
+* Any associated dataset for testing.
